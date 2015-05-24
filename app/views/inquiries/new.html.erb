@@ -26,7 +26,7 @@
   </div>
   <div class="field">
     <%= f.label :"担当者" %><br>
-    <%= f.text_field :inquiry_taiosha %>
+    <%= f.text_field :inquiry_person %>
   </div>
   <div class="field">
     <%= f.label :"問い合わせ種類" %><br />
@@ -39,7 +39,7 @@
 
   <div class="field">
     <%= f.label :"担当者" %><br>
-    <%= f.text_field :inquiry_taiosha %>
+    <%= f.text_field :inquiry_person %>
   </div>
   <div class="field">
     <%= f.label :"保護者名" %><br>
@@ -96,66 +96,129 @@
     <%= f.text_field :pay_owner %>
   </div>
   <div class="field">
-    <%= f.check_box :course_1,{'name'=>'inquiry[course][]'},'0' %>幼児コース
-    <%= f.check_box :course_2,{'name'=>'inquiry[course][]'},'1' %>ジュニアスコース
-    <%= f.check_box :course_3,{'name'=>'inquiry[course][]'},'2' %>英語コース
-    <%= f.check_box :course_4,{'name'=>'inquiry[course][]'},'3' %>障害コース
-    <%= f.check_box :course_5,{'name'=>'inquiry[course][]'},'4' %>音楽コース
-    <%= f.check_box :course_6,{'name'=>'inquiry[course][]'},'5' %>胎教コース
-    <%= f.check_box :course_7,{'name'=>'inquiry[course][]'},'6' %>その他コース
+    <%= f.check_box :course_1,{'name'=>'inquiry[course_1]'},true,false %>幼児コース
+    <%= f.check_box :course_2,{'name'=>'inquiry[course_2]'},true,false %>ジュニアスコース
+    <%= f.check_box :course_3,{'name'=>'inquiry[course_3]'},true,false %>英語コース
+    <%= f.check_box :course_4,{'name'=>'inquiry[course_4]'},true,false %>障害コース
+    <%= f.check_box :course_5,{'name'=>'inquiry[course_5]'},true,false %>音楽コース
+    <%= f.check_box :course_6,{'name'=>'inquiry[course_6]'},true,false %>胎教コース
+    <%= f.check_box :course_7,{'name'=>'inquiry[course_7]'},true,false %>その他コース
 <!--    
     <%= f.check_box :course_8,{'name'=>'inquiry[course][]'},'7' %>予備。今回は使用しない
     <%= f.check_box :course_9,{'name'=>'inquiry[course][]'},'8' %>予備。今回は使用しない
     <%= f.check_box :course_10,{'name'=>'inquiry[course][]'},'9' %>予備。今回は使用しない
 -->
   </div>
+  <div class="field">
+    <%= f.label :"顧客名" %><br>
+    <%= f.text_field :inquiry_name_1 %>
+    <%= f.label :"顧客名カナ" %><br />
+    <%= f.text_field :inquiry_name_kana_1 %>
+    <%= f.label :"生年月日" %><br />
+    <%= f.date_select :inquiry_birthday_1 %>
+    <%= f.label :"年齢" %><br />
+    <%= f.text_field :inquiry_age_yearmonth_1 %>
+    <%= f.label :"クラス" %><br />
+    <%= f.text_field :inquiry_grade_1 %>
+    <%= f.label :"性別" %><br />
+    <%= f.radio_button :inquiry_gender_1, 0 %> 男
+    <%= f.radio_button :inquiry_gender_1, 1 %> 女
+  </div>
+  <div class="field">
+    <%= f.label :"顧客名" %><br>
+    <%= f.text_field :inquiry_name_2 %>
+    <%= f.label :"顧客名カナ" %><br />
+    <%= f.text_field :inquiry_name_kana_2 %>
+    <%= f.label :"生年月日" %><br />
+    <%= f.date_select :inquiry_birthday_2 %>
+    <%= f.label :"年齢" %><br />
+    <%= f.text_field :inquiry_age_yearmonth_2 %>
+    <%= f.label :"クラス" %><br />
+    <%= f.text_field :inquiry_grade_2 %>
+    <%= f.label :"性別" %><br />
+    <%= f.radio_button :inquiry_gender_2, 0 %> 男
+    <%= f.radio_button :inquiry_gender_2, 1 %> 女
+  </div>
+  <div class="field">
+    <%= f.label :"顧客名" %><br>
+    <%= f.text_field :inquiry_name_3 %>
+    <%= f.label :"顧客名カナ" %><br />
+    <%= f.text_field :inquiry_name_kana_3 %>
+    <%= f.label :"生年月日" %><br />
+    <%= f.date_select :inquiry_birthday_3 %>
+    <%= f.label :"年齢" %><br />
+    <%= f.text_field :inquiry_age_yearmonth_3 %>
+    <%= f.label :"クラス" %><br />
+    <%= f.text_field :inquiry_grade_3 %>
+    <%= f.label :"性別" %><br />
+    <%= f.radio_button :inquiry_gender_3, 0 %> 男
+    <%= f.radio_button :inquiry_gender_3, 1 %> 女
+  </div>
+  <div class="field">
+    <%= f.label :"顧客名" %><br>
+    <%= f.text_field :inquiry_name_4 %>
+    <%= f.label :"顧客名カナ" %><br />
+    <%= f.text_field :inquiry_name_kana_4 %>
+    <%= f.label :"生年月日" %><br />
+    <%= f.date_select :inquiry_birthday_4 %>
+    <%= f.label :"年齢" %><br />
+    <%= f.text_field :inquiry_age_yearmonth_4 %>
+    <%= f.label :"クラス" %><br />
+    <%= f.text_field :inquiry_grade_4 %>
+    <%= f.label :"性別" %><br />
+    <%= f.radio_button :inquiry_gender_4, 0 %> 男
+    <%= f.radio_button :inquiry_gender_4, 1 %> 女
+  </div>
+  <div class="field">
+    <%= f.label :"顧客名" %><br>
+    <%= f.text_field :inquiry_name_5 %>
+    <%= f.label :"顧客名カナ" %><br />
+    <%= f.text_field :inquiry_name_kana_5 %>
+    <%= f.label :"生年月日" %><br />
+    <%= f.date_select :inquiry_birthday_5 %>
+    <%= f.label :"年齢" %><br />
+    <%= f.text_field :inquiry_age_yearmonth_5 %>
+    <%= f.label :"クラス" %><br />
+    <%= f.text_field :inquiry_grade_5 %>
+    <%= f.label :"性別" %><br />
+    <%= f.radio_button :inquiry_gender_5, 0 %> 男
+    <%= f.radio_button :inquiry_gender_5, 1 %> 女
+  </div>
 
+  <div class="field">
+    <%= f.label :"inquiry_data" %><br>
+    <%= f.text_field :inquiry_data %>
+  </div>
+  <div class="field">
+    <%= f.label :"send_date" %><br>
+    <%= f.date_select :send_date %>
+  </div>
+  <div class="field">
+    <%= f.check_box :inquiry_experience,{'name'=>'inquiry[inquiry_experience]'},true,false %>体験希望
+  </div>
+  <div class="field">
+    <%= f.label :"体験日" %><br>
+    <%= f.date_select :experience_date %>
+  </div>
 
-
-<!--
-      t.string :inquiry_name_1
-      t.string :inquiry_name_kana_1
-      t.string :inquiry_birthday_1
-      t.string :inquiry_age_yearmonth_1 #例：2歳10ヶ月→2.10と入力表示
-      t.string :inquiry_grade_1
-      t.integer :inquiry_gender_1 #0：男　1：女
-      t.string :inquiry_name_2
-      t.string :inquiry_name_kana_2
-      t.string :inquiry_birthday_2
-      t.string :inquiry_age_yearmonth_2 #例：2歳10ヶ月→2.10と入力表示
-      t.string :inquiry_grade_2
-      t.integer :inquiry_gender_2 #0：男　1：女
-      t.string :inquiry_name_3
-      t.string :inquiry_name_kana_3
-      t.string :inquiry_birthday_3
-      t.string :inquiry_age_yearmonth_3 #例：2歳10ヶ月→2.10と入力表示
-      t.string :inquiry_grade_3
-      t.integer :inquiry_gender_3 #0：男　1：女
-      t.string :inquiry_name_4
-      t.string :inquiry_name_kana_4
-      t.string :inquiry_birthday_4
-      t.string :inquiry_age_yearmonth_4 #例：2歳10ヶ月→2.10と入力表示
-      t.string :inquiry_grade_4
-      t.integer :inquiry_gender_4 #0：男　1：女
-      t.string :inquiry_name_5
-      t.string :inquiry_name_kana_5
-      t.string :inquiry_birthday_5
-      t.string :inquiry_age_yearmonth_5 #例：2歳10ヶ月→2.10と入力表示
-      t.string :inquiry_grade_5
-      t.integer :inquiry_gender_5 #0：男　1：女
-      t.boolean :inquiry_data
-      t.datetime :send_date
-      t.boolean :inquiry_experience
-      t.datetime :experience_date
-      t.boolean :inquiry_explanation
-      t.datetime :explanation_date
-      t.boolean :inquiry_applicant
-      t.date :applicant_date  #【画面項目】year + month + day
-      t.boolean :inquiry_other
-      t.string :inquiry_other_content
-      t.string :remarks
--->
-
+  <div class="field">
+    <%= f.check_box :inquiry_applicant,{'name'=>'inquiry[inquiry_applicant]'},true,false %>inquiry_applicant
+  </div>
+  <div class="field">
+    <%= f.label :"applicant_date" %><br>
+    <%= f.date_select :applicant_date %>
+  </div>
+  <div class="field">
+    <%= f.check_box :inquiry_other,{'name'=>'inquiry[inquiry_other]'},true,false %>
+  </div>
+  <div class="field">
+    <%= f.label :"inquiry_other_content" %><br>
+    <%= f.text_field :inquiry_other_content %>
+  </div>
+  <div class="field">
+    <%= f.label :"備考" %><br>
+    <%= f.text_field :remarks %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>

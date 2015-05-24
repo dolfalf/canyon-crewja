@@ -69,6 +69,6 @@ class InquiriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def inquiry_params
-      params.require(:inquiry).permit(:branch_id)
+      params.require(:inquiry).permit(:branch_id, :inquiry_date, :inquiry_person, :inquiry_type)
     end
 end
