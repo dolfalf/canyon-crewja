@@ -1,5 +1,167 @@
-<h1>New Inquiry</h1>
+<%- model_class = Inquiry -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
+</div>
 
-<%= render 'form' %>
+<%= form_for(@inquiry) do |f| %>
+  <% if @inquiry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@inquiry.errors.count, "error") %> prohibited this inquiry from being saved:</h2>
 
-<%= link_to 'Back', inquiries_path %>
+      <ul>
+      <% @inquiry.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ブレンチID %><br>
+    <%= f.text_field :branch_id %>
+  </div>
+  <div class="field">
+    <%= f.label :"問い合わせ日" %><br>
+    <%= f.date_select :inquiry_date %>
+  </div>
+  <div class="field">
+    <%= f.label :"担当者" %><br>
+    <%= f.text_field :inquiry_taiosha %>
+  </div>
+  <div class="field">
+    <%= f.label :"問い合わせ種類" %><br />
+    <%= f.radio_button :inquiry_type, 1 %> 来室
+    <%= f.radio_button :inquiry_type, 2 %> 電話
+    <%= f.radio_button :inquiry_type, 3 %> ﾌｧｯｸｽ
+    <%= f.radio_button :inquiry_type, 4 %> ﾒｰﾙ
+    <%= f.radio_button :inquiry_type, 5 %> その他
+  </div>
+
+  <div class="field">
+    <%= f.label :"担当者" %><br>
+    <%= f.text_field :inquiry_taiosha %>
+  </div>
+  <div class="field">
+    <%= f.label :"保護者名" %><br>
+    <%= f.text_field :parent_name %>
+  </div>
+  <div class="field">
+    <%= f.label :"保護者名カナ" %><br>
+    <%= f.text_field :parent_name_kana %>
+  </div>
+  <div class="field">
+    <%= f.label :"関係" %><br>
+    <%= f.text_field :relation %>
+  </div>
+  <div class="field">
+    <%= f.label :"郵便番号" %><br>
+    <%= f.text_field :address_zip %>
+  </div>
+  <div class="field">
+    <%= f.label :"電話番号" %><br>
+    <%= f.text_field :telephone %>
+  </div>
+  <div class="field">
+    <%= f.label :"都道府県コード" %><br />
+    <%= f.collection_select :address_prefectures, PrefecturesCode.all, :code, :name, include_blank: true %>
+  </div>
+  <div class="field">
+    <%= f.label :"携帯" %><br>
+    <%= f.text_field :mobile %>
+  </div>
+  <div class="field">
+    <%= f.label :"e-mail" %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :"最寄り駅" %><br>
+    <%= f.text_field :station %>
+  </div>
+  <div class="field">
+    <%= f.label :"支払い" %><br />
+    <%= f.radio_button :payment, 1 %> 郵便局自動払込
+    <%= f.radio_button :payment, 2 %> 銀行振込
+  </div>
+  <div class="field">
+    <%= f.label :"郵便局口座の記号" %><br>
+    <%= f.text_field :pay_account_mark %>
+  </div>
+  <div class="field">
+  (郵便局自動払込の場合のみ)
+    <%= f.label :"郵便局口座の記号" %><br>
+    <%= f.text_field :pay_account_numner %>
+  </div>
+  <div class="field">
+    <%= f.label :"支払い名" %><br>
+    <%= f.text_field :pay_owner %>
+  </div>
+  <div class="field">
+    <%= f.check_box :course_1,{'name'=>'inquiry[course][]'},'0' %>幼児コース
+    <%= f.check_box :course_2,{'name'=>'inquiry[course][]'},'1' %>ジュニアスコース
+    <%= f.check_box :course_3,{'name'=>'inquiry[course][]'},'2' %>英語コース
+    <%= f.check_box :course_4,{'name'=>'inquiry[course][]'},'3' %>障害コース
+    <%= f.check_box :course_5,{'name'=>'inquiry[course][]'},'4' %>音楽コース
+    <%= f.check_box :course_6,{'name'=>'inquiry[course][]'},'5' %>胎教コース
+    <%= f.check_box :course_7,{'name'=>'inquiry[course][]'},'6' %>その他コース
+<!--    
+    <%= f.check_box :course_8,{'name'=>'inquiry[course][]'},'7' %>予備。今回は使用しない
+    <%= f.check_box :course_9,{'name'=>'inquiry[course][]'},'8' %>予備。今回は使用しない
+    <%= f.check_box :course_10,{'name'=>'inquiry[course][]'},'9' %>予備。今回は使用しない
+-->
+  </div>
+
+
+
+<!--
+      t.string :inquiry_name_1
+      t.string :inquiry_name_kana_1
+      t.string :inquiry_birthday_1
+      t.string :inquiry_age_yearmonth_1 #例：2歳10ヶ月→2.10と入力表示
+      t.string :inquiry_grade_1
+      t.integer :inquiry_gender_1 #0：男　1：女
+      t.string :inquiry_name_2
+      t.string :inquiry_name_kana_2
+      t.string :inquiry_birthday_2
+      t.string :inquiry_age_yearmonth_2 #例：2歳10ヶ月→2.10と入力表示
+      t.string :inquiry_grade_2
+      t.integer :inquiry_gender_2 #0：男　1：女
+      t.string :inquiry_name_3
+      t.string :inquiry_name_kana_3
+      t.string :inquiry_birthday_3
+      t.string :inquiry_age_yearmonth_3 #例：2歳10ヶ月→2.10と入力表示
+      t.string :inquiry_grade_3
+      t.integer :inquiry_gender_3 #0：男　1：女
+      t.string :inquiry_name_4
+      t.string :inquiry_name_kana_4
+      t.string :inquiry_birthday_4
+      t.string :inquiry_age_yearmonth_4 #例：2歳10ヶ月→2.10と入力表示
+      t.string :inquiry_grade_4
+      t.integer :inquiry_gender_4 #0：男　1：女
+      t.string :inquiry_name_5
+      t.string :inquiry_name_kana_5
+      t.string :inquiry_birthday_5
+      t.string :inquiry_age_yearmonth_5 #例：2歳10ヶ月→2.10と入力表示
+      t.string :inquiry_grade_5
+      t.integer :inquiry_gender_5 #0：男　1：女
+      t.boolean :inquiry_data
+      t.datetime :send_date
+      t.boolean :inquiry_experience
+      t.datetime :experience_date
+      t.boolean :inquiry_explanation
+      t.datetime :explanation_date
+      t.boolean :inquiry_applicant
+      t.date :applicant_date  #【画面項目】year + month + day
+      t.boolean :inquiry_other
+      t.string :inquiry_other_content
+      t.string :remarks
+-->
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<!--
+<%= render :partial => 'form' %>
+->

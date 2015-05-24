@@ -33,8 +33,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 # j.lee add.
-  gem 'bootstrap-sass', '~> 3.3.3'
-  gem 'simple_form', '3.1.0'
+gem 'therubyracer' # javascript runtime。lessをコンパイルするために必要
+gem 'less-rails' # Railsでlessを使えるようにする。Bootstrapがlessで書かれているため
+gem 'twitter-bootstrap-rails' # Bootstrapの本体
+gem 'simple_form', '3.1.0'
+gem 'ui_datepicker-rails3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
