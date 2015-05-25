@@ -38,6 +38,7 @@ gem 'less-rails' # Railsでlessを使えるようにする。Bootstrapがlessで
 gem 'twitter-bootstrap-rails' # Bootstrapの本体
 gem 'simple_form', '3.1.0'
 gem 'ui_datepicker-rails3'
+gem 'devise'  #ログイン機能
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
