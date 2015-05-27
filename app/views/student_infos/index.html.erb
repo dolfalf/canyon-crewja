@@ -1,0 +1,50 @@
+<%- model_class = StudentInfo -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:branch_id) %></th>
+      <th><%= model_class.human_attribute_name(:child_id) %></th>
+      <th><%= model_class.human_attribute_name(:student_name) %></th>
+      <th><%= model_class.human_attribute_name(:student_kana) %></th>
+      <th><%= model_class.human_attribute_name(:gender) %></th>
+      <th><%= model_class.human_attribute_name(:birthday) %></th>
+      <th><%= model_class.human_attribute_name(:application_age_yearmonth) %></th>
+      <th><%= model_class.human_attribute_name(:inquery_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @student_infos.each do |student_info| %>
+      <tr>
+        <td><%= link_to student_info.id, student_info_path(student_info) %></td>
+        <td><%= student_info.branch_id %></td>
+        <td><%= student_info.child_id %></td>
+        <td><%= student_info.student_name %></td>
+        <td><%= student_info.student_kana %></td>
+        <td><%= student_info.gender %></td>
+        <td><%= student_info.birthday %></td>
+        <td><%= student_info.application_age_yearmonth %></td>
+        <td><%= student_info.inquery_id %></td>
+        <td><%=l student_info.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_student_info_path(student_info), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      student_info_path(student_info),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_student_info_path,
+            :class => 'btn btn-primary' %>

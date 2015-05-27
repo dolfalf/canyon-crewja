@@ -1,0 +1,19 @@
+<%= simple_form_for(@student_cource) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :branch_id %>
+    <%= f.input :student_id %>
+    <%= f.input :sequence_no %>
+    <%= f.input :coruse_id %>
+    <%= f.input :lecture_startdate %>
+    <%= f.input :lecture_enddate %>
+    <%= f.input :timetable_week %>
+    <%= f.input :timetabel_time %>
+    <%= f.input :class %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

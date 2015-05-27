@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150525133351) do
+ActiveRecord::Schema.define(version: 20150527131216) do
 
   create_table "inquiries", force: :cascade do |t|
     t.string   "branch_id"
@@ -95,6 +95,55 @@ ActiveRecord::Schema.define(version: 20150525133351) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "question_inputs", force: :cascade do |t|
+    t.string   "branch_id"
+    t.string   "input_id"
+    t.integer  "question_group"
+    t.string   "question_number"
+    t.string   "question_value"
+    t.string   "question_comment"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "student_cources", force: :cascade do |t|
+    t.string   "branch_id"
+    t.string   "student_id"
+    t.integer  "sequence_no"
+    t.string   "coruse_id"
+    t.datetime "lecture_startdate"
+    t.string   "lecture_enddate"
+    t.integer  "timetable_week"
+    t.integer  "timetabel_time"
+    t.string   "class"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  create_table "student_infos", force: :cascade do |t|
+    t.string   "branch_id"
+    t.string   "child_id"
+    t.string   "student_name"
+    t.string   "student_kana"
+    t.integer  "gender"
+    t.date     "birthday"
+    t.string   "application_age_yearmonth"
+    t.string   "inquery_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  create_table "student_logs", force: :cascade do |t|
+    t.string   "branch_id"
+    t.string   "student_id"
+    t.integer  "sequence_no"
+    t.datetime "log_entry_date"
+    t.string   "log_entry_contents"
+    t.string   "log_engry_person"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "users", force: :cascade do |t|

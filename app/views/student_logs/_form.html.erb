@@ -1,0 +1,16 @@
+<%= simple_form_for(@student_log) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :branch_id %>
+    <%= f.input :student_id %>
+    <%= f.input :sequence_no %>
+    <%= f.input :log_entry_date %>
+    <%= f.input :log_entry_contents %>
+    <%= f.input :log_engry_person %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

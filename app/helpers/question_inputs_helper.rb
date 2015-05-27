@@ -1,0 +1,2 @@
+module QuestionInputsHelper
+end

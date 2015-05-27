@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Branch:</strong>
+  <%= @student_log.branch_id %>
+</p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @student_log.student_id %>
+</p>
+
+<p>
+  <strong>Sequence no:</strong>
+  <%= @student_log.sequence_no %>
+</p>
+
+<p>
+  <strong>Log entry date:</strong>
+  <%= @student_log.log_entry_date %>
+</p>
+
+<p>
+  <strong>Log entry contents:</strong>
+  <%= @student_log.log_entry_contents %>
+</p>
+
+<p>
+  <strong>Log engry person:</strong>
+  <%= @student_log.log_engry_person %>
+</p>
+
+<%= link_to 'Edit', edit_student_log_path(@student_log) %> |
+<%= link_to 'Back', student_logs_path %>

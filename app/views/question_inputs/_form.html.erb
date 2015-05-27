@@ -1,0 +1,16 @@
+<%= simple_form_for(@question_input) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :branch_id %>
+    <%= f.input :input_id %>
+    <%= f.input :question_group %>
+    <%= f.input :question_number %>
+    <%= f.input :question_value %>
+    <%= f.input :question_comment %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
