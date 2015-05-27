@@ -1,0 +1,10 @@
+<%= simple_form_for @branch_info, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :branch_name %>
+  <%= error_span(@branch_info[:branch_name]) %>
+  <%= f.input :address %>
+  <%= error_span(@branch_info[:address]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                branch_infos_path, :class => 'btn btn-default' %>
+<% end %>

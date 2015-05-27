@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :branch_infos
   get 'menu/index'
 
   resources :question_inputs

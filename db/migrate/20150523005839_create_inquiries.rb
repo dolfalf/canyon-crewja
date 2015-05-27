@@ -1,7 +1,8 @@
 class CreateInquiries < ActiveRecord::Migration
   def change
     create_table :inquiries do |t|
-      t.string :branch_id   #採番テーブルより取得最終採番受付ID + 例：'000001'
+      belongs_to :branch_infos
+      #t.string :branch_id   #採番テーブルより取得最終採番受付ID + 例：'000001'
       t.date :inquiry_date  #【画面項目】year + month + day
       t.string :inquiry_person      #担当者
       t.integer :inquiry_type     #1:来室、2:電話、3:ﾌｧｯｸｽ、4:ﾒｰﾙ、5:その他

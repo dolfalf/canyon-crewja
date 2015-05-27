@@ -16,7 +16,6 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:branch_id) %></th>
       <th><%= model_class.human_attribute_name(:inquiry_date) %></th>
       <th><%= model_class.human_attribute_name(:inquiry_person) %></th>
       <th><%= model_class.human_attribute_name(:inquiry_type) %></th>
@@ -96,7 +95,6 @@
     <% @inquiries.each do |inquiry| %>
       <tr>
         <td><%= link_to inquiry.id, inquiry_path(inquiry) %></td>
-        <td><%= inquiry.branch_id %></td>
         <td><%= inquiry.inquiry_date %></td>
         <td><%= inquiry.inquiry_person %></td>
         <td><%= inquiry.inquiry_type %></td>
