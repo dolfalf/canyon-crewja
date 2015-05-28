@@ -1,6 +1,6 @@
 <%= simple_form_for @inquiry, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :branch_id %>
-  <%= error_span(@inquiry[:branch_id]) %>
+  <%= f.input :branch_info %>
+  <%= error_span(@inquiry[:branch_info]) %>
   <%= f.input :inquiry_date %>
   <%= error_span(@inquiry[:inquiry_date]) %>
   <%= f.input :inquiry_person %>
