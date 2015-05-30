@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150529104312) do
+ActiveRecord::Schema.define(version: 20150530004936) do
 
   create_table "branch_infos", force: :cascade do |t|
     t.string   "branch_name"
@@ -117,11 +117,9 @@ ActiveRecord::Schema.define(version: 20150529104312) do
     t.datetime "updated_at",       null: false
   end
 
-  create_table "student_cources", force: :cascade do |t|
-    t.string   "branch_id"
-    t.string   "student_id"
+  create_table "student_courses", force: :cascade do |t|
     t.integer  "sequence_no"
-    t.string   "coruse_id"
+    t.string   "course_id"
     t.datetime "lecture_startdate"
     t.string   "lecture_enddate"
     t.integer  "timetable_week"
@@ -129,20 +127,36 @@ ActiveRecord::Schema.define(version: 20150529104312) do
     t.string   "class"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.string   "regist_user"
+    t.string   "update_user"
   end
 
   create_table "student_infos", force: :cascade do |t|
-    t.string   "branch_id"
     t.string   "child_id"
     t.string   "student_name"
     t.string   "student_kana"
     t.integer  "gender"
     t.date     "birthday"
     t.string   "application_age_yearmonth"
-    t.string   "inquery_id"
+    t.date     "pay_date"
+    t.date     "entry_date"
+    t.integer  "entry_class"
+    t.string   "entry_class_base"
+    t.date     "leave_date"
+    t.integer  "leave_class"
+    t.string   "leave_class_base"
+    t.string   "link_sibling_id"
+    t.integer  "same_enter"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.string   "regist_user"
+    t.string   "update_user"
+    t.integer  "branch_info_id"
+    t.integer  "inquiry_id"
   end
+
+  add_index "student_infos", ["branch_info_id"], name: "index_student_infos_on_branch_info_id"
+  add_index "student_infos", ["inquiry_id"], name: "index_student_infos_on_inquiry_id"
 
   create_table "student_logs", force: :cascade do |t|
     t.string   "branch_id"

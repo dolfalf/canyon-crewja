@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
+  resources :student_courses
   resources :branch_infos
   get 'menu/index'
 
   resources :question_inputs
   resources :student_logs
-  resources :student_cources
   resources :student_infos
   get 'home/show'
   devise_for :users
