@@ -1,8 +1,7 @@
-class CreateQuestionInputs < ActiveRecord::Migration
+class CreateTeachers < ActiveRecord::Migration
   def change
-    create_table :question_inputs do |t|
-      t.string :question_value
-      t.string :question_comment
+    create_table :teachers do |t|
+      t.string :teacher_name
       t.timestamps :regist_date
       t.string :regist_user
       t.timestamps :update_date

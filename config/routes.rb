@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  resources :addresses
+  resources :items
+  resources :item_groups
+  resources :courses
+  resources :teachers
+  resources :order_infos
+  resources :bill_detail_infos
+  resources :bill_head_infos
+  resources :question_masters
   resources :student_courses
   resources :branch_infos
   get 'menu/index'

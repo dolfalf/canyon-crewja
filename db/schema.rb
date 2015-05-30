@@ -11,13 +11,74 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150530004936) do
+ActiveRecord::Schema.define(version: 20150530072550) do
+
+  create_table "addresses", force: :cascade do |t|
+    t.string   "post_no1"
+    t.string   "post_no2"
+    t.string   "kana_1"
+    t.string   "kana_2"
+    t.string   "kana_3"
+    t.string   "kanji_1"
+    t.string   "kanji_2"
+    t.string   "kanji_3"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "regist_user"
+    t.string   "update_user"
+  end
+
+  create_table "bill_detail_infos", force: :cascade do |t|
+    t.integer  "application_id"
+    t.integer  "sequence_no"
+    t.string   "item_code"
+    t.string   "item_name"
+    t.string   "item_group_code"
+    t.decimal  "sale_price"
+    t.decimal  "quantity"
+    t.decimal  "amount"
+    t.date     "input_date"
+    t.date     "order_day"
+    t.date     "service_day"
+    t.string   "recept_person"
+    t.integer  "bill_flag"
+    t.date     "pay_day"
+    t.integer  "display_flag"
+    t.integer  "check_flag"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "regist_user"
+    t.string   "update_user"
+  end
+
+  create_table "bill_head_infos", force: :cascade do |t|
+    t.integer  "payment"
+    t.date     "payday"
+    t.date     "print_day"
+    t.integer  "print_count"
+    t.date     "auto_print_day"
+    t.integer  "auto_print_count"
+    t.decimal  "all_amount"
+    t.integer  "unpaid_flag"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "regist_user"
+    t.string   "update_user"
+  end
 
   create_table "branch_infos", force: :cascade do |t|
     t.string   "branch_name"
     t.string   "address"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.string   "course_name"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "regist_user"
+    t.string   "update_user"
   end
 
   create_table "inquiries", force: :cascade do |t|
@@ -99,6 +160,37 @@ ActiveRecord::Schema.define(version: 20150530004936) do
 
   add_index "inquiries", ["branch_info_id"], name: "index_inquiries_on_branch_info_id"
 
+  create_table "item_groups", force: :cascade do |t|
+    t.string   "item_group_name"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "regist_user"
+    t.string   "update_user"
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string   "item_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "order_infos", force: :cascade do |t|
+    t.integer  "application_id"
+    t.string   "application_name"
+    t.date     "application_day"
+    t.integer  "sequence_no"
+    t.string   "item_code"
+    t.string   "item_name"
+    t.decimal  "quantity"
+    t.date     "input_date"
+    t.date     "order_plan_day"
+    t.date     "order_action_day"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "regist_user"
+    t.string   "update_user"
+  end
+
   create_table "prefectures_codes", force: :cascade do |t|
     t.string   "code"
     t.string   "name"
@@ -115,6 +207,30 @@ ActiveRecord::Schema.define(version: 20150530004936) do
     t.string   "question_comment"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+  end
+
+  create_table "question_masters", force: :cascade do |t|
+    t.integer  "question_group"
+    t.string   "question_value"
+    t.integer  "show_flg"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "regist_user"
+    t.string   "update_user"
+  end
+
+  create_table "student_cources", force: :cascade do |t|
+    t.integer  "sequence_no"
+    t.string   "course_id"
+    t.datetime "lecture_startdate"
+    t.string   "lecture_enddate"
+    t.integer  "timetable_week"
+    t.integer  "timetabel_time"
+    t.string   "class"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "regist_user"
+    t.string   "update_user"
   end
 
   create_table "student_courses", force: :cascade do |t|
@@ -167,6 +283,14 @@ ActiveRecord::Schema.define(version: 20150530004936) do
     t.string   "log_engry_person"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+  end
+
+  create_table "teachers", force: :cascade do |t|
+    t.string   "teacher_name"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "regist_user"
+    t.string   "update_user"
   end
 
   create_table "users", force: :cascade do |t|

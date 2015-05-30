@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Question group:</strong>
+  <%= @question_master.question_group %>
+</p>
+
+<%= link_to 'Edit', edit_question_master_path(@question_master) %> |
+<%= link_to 'Back', question_masters_path %>
