@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :inquiries
   
-  root :to => "home#show"
+  root :to => "inquiries#index"
   
   # ログイン画面をホームにする
   #devise_scope :user do
