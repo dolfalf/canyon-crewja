@@ -1,0 +1,16 @@
+<%= simple_form_for @inquiry do |f| %>
+  <%= f.input :id, label: 'ID' %>
+  <%= f.input :parent_name, label: '氏名' %>
+  <%= f.input :parent_name_kana, label: 'ヨミガナ' %>
+  <%= f.input :telephone, label: 'TEL' %>
+  <%= f.input :address_city, label: '住所' %>
+  <%= f.input :inquiry_name_1, label: '子１' %>
+  <%= f.input :inquiry_name_2, label: '子２' %>
+  <%= f.input :inquiry_name_3, label: '子３' %>
+  <% if false %>
+  <%= f.input :password, hint: 'No special characters.' %>
+  <%= f.input :email, placeholder: 'user@domain.com' %>
+  <%= f.input :remember_me, inline_label: 'Yes, remember me' %>
+  <% end %>
+  <%= f.button :submit %>
+<% end %>

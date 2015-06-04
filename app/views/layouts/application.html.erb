@@ -35,8 +35,16 @@
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
     <%= javascript_include_tag "application" %>
+
   </head>
   <body>
+
+    <style>
+      .debugRow > div {
+      height: 3em;
+      border: 1px solid gray;  
+      }
+    </style>
 
     <div class="navbar navbar-default navbar-static-top">
       <div class="container">
@@ -53,8 +61,14 @@
             <li><%= link_to "Link3", "/path3"  %></li>
           </ul>
         </div>
-        <!-- devise sign in/out info -->
-        <p class="navbar-text pull-right">
+      </div>
+    </div>
+
+    <div class="container">
+
+    <!-- devise sign in/out info -->
+    <div class="row">
+      <div class="col-lg-12 text-right">
         <% if user_signed_in? %>
           Logged in as <strong><%= current_user.email %></strong>.
           <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
@@ -63,31 +77,18 @@
           <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
           <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
         <% end %>
-        </p>
       </div>
     </div>
 
-    <div class="container">
       <div class="row">
-        <div class="col-lg-9">
+        <div class="col-lg-12">
           <%= bootstrap_flash %>
           <%= yield %>
         </div>
-        <div class="col-lg-3">
-          <div class="well sidebar-nav">
-            <h3>Sidebar</h3>
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
       </div><!--/row-->
 
       <footer>
-        <p>&copy; Company 2015</p>
+        <p>&copy; Company 2015 Canyon Crewja.</p>
       </footer>
 
     </div> <!-- /container -->

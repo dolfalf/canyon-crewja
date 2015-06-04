@@ -1,13 +1,18 @@
 <%- model_class = Inquiry -%>
-
+<div class = "row" style="min-height: 8em">
 <ul class="nav nav-tabs">
-  <li role="presentation" class="active"><a href="#">Home</a></li>
-  <li role="presentation"><a href="#">Profile</a></li>
-  <li role="presentation"><a href="#">Messages</a></li>
+  <li role="presentation" class="active"><a href="#">問い合わせ</a></li>
+  <li role="presentation"><a href="#">生徒管理</a></li>
+  <li role="presentation"><a href="#">請求管理</a></li>
+  <li role="presentation"><a href="#">教材発注依頼</a></li>
 </ul>
-
-<h1>ようこそ</h1>
-<p>トップページです。</p>
+</div>
+<div class = "row">
+  <h4><span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>検索<br><small>検索項目を入力してください。</small></h4>
+</div>
+<div class = "row">
+  <%= render :partial => 'search_form' %>
+</div>
 
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
