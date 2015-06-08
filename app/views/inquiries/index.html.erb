@@ -13,9 +13,11 @@
 <div class = "row">
   <%= render :partial => 'search_form' %>
 </div>
-
 <div class="page-header">
   <h1>問い合わせ一覧</h1>
+  <%= link_to t('.new', :default => t("helpers.links.new")),
+            new_inquiry_path,
+            :class => 'btn btn-primary' %>
 </div>
 <table class="table table-striped">
   <thead>
@@ -37,78 +39,15 @@
     <% @inquiries.each do |inquiry| %>
       <tr>
         <td><%= link_to inquiry.id, inquiry_path(inquiry) %></td>
-        <td><%= inquiry.inquiry_date %></td>
-        <td><%= inquiry.inquiry_person %></td>
-        <td><%= inquiry.inquiry_type %></td>
-        <td><%= inquiry.inquiry_type_etc %></td>
         <td><%= inquiry.parent_name %></td>
         <td><%= inquiry.parent_name_kana %></td>
-        <td><%= inquiry.relation %></td>
         <td><%= inquiry.telephone %></td>
-        <td><%= inquiry.address_zip %></td>
+        <td><%= inquiry.mobile %></td>
         <td><%= inquiry.address_prefectures %></td>
         <td><%= inquiry.address_city %></td>
-        <td><%= inquiry.mobile %></td>
-        <td><%= inquiry.email %></td>
-        <td><%= inquiry.station %></td>
-        <td><%= inquiry.payment %></td>
-        <td><%= inquiry.pay_account_mark %></td>
-        <td><%= inquiry.pay_account_numner %></td>
-        <td><%= inquiry.pay_owner %></td>
-        <td><%= inquiry.course_1 %></td>
-        <td><%= inquiry.course_2 %></td>
-        <td><%= inquiry.course_3 %></td>
-        <td><%= inquiry.course_4 %></td>
-        <td><%= inquiry.course_5 %></td>
-        <td><%= inquiry.course_6 %></td>
-        <td><%= inquiry.course_7 %></td>
-        <td><%= inquiry.course_8 %></td>
-        <td><%= inquiry.course_9 %></td>
-        <td><%= inquiry.course_10 %></td>
         <td><%= inquiry.inquiry_name_1 %></td>
-        <td><%= inquiry.inquiry_name_kana_1 %></td>
-        <td><%= inquiry.inquiry_birthday_1 %></td>
-        <td><%= inquiry.inquiry_age_yearmonth_1 %></td>
-        <td><%= inquiry.inquiry_grade_1 %></td>
-        <td><%= inquiry.inquiry_gender_1 %></td>
         <td><%= inquiry.inquiry_name_2 %></td>
-        <td><%= inquiry.inquiry_name_kana_2 %></td>
-        <td><%= inquiry.inquiry_birthday_2 %></td>
-        <td><%= inquiry.inquiry_age_yearmonth_2 %></td>
-        <td><%= inquiry.inquiry_grade_2 %></td>
-        <td><%= inquiry.inquiry_gender_2 %></td>
         <td><%= inquiry.inquiry_name_3 %></td>
-        <td><%= inquiry.inquiry_name_kana_3 %></td>
-        <td><%= inquiry.inquiry_birthday_3 %></td>
-        <td><%= inquiry.inquiry_age_yearmonth_3 %></td>
-        <td><%= inquiry.inquiry_grade_3 %></td>
-        <td><%= inquiry.inquiry_gender_3 %></td>
-        <td><%= inquiry.inquiry_name_4 %></td>
-        <td><%= inquiry.inquiry_name_kana_4 %></td>
-        <td><%= inquiry.inquiry_birthday_4 %></td>
-        <td><%= inquiry.inquiry_age_yearmonth_4 %></td>
-        <td><%= inquiry.inquiry_grade_4 %></td>
-        <td><%= inquiry.inquiry_gender_4 %></td>
-        <td><%= inquiry.inquiry_name_5 %></td>
-        <td><%= inquiry.inquiry_name_kana_5 %></td>
-        <td><%= inquiry.inquiry_birthday_5 %></td>
-        <td><%= inquiry.inquiry_age_yearmonth_5 %></td>
-        <td><%= inquiry.inquiry_grade_5 %></td>
-        <td><%= inquiry.inquiry_gender_5 %></td>
-        <td><%= inquiry.inquiry_data %></td>
-        <td><%= inquiry.send_date %></td>
-        <td><%= inquiry.inquiry_experience %></td>
-        <td><%= inquiry.experience_date %></td>
-        <td><%= inquiry.inquiry_explanation %></td>
-        <td><%= inquiry.explanation_date %></td>
-        <td><%= inquiry.inquiry_applicant %></td>
-        <td><%= inquiry.applicant_date %></td>
-        <td><%= inquiry.inquiry_other %></td>
-        <td><%= inquiry.inquiry_other_content %></td>
-        <td><%= inquiry.remarks %></td>
-        <td><%= inquiry.regist_user %></td>
-        <td><%= inquiry.update_user %></td>
-        <td><%=l inquiry.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_inquiry_path(inquiry), :class => 'btn btn-default btn-xs' %>
@@ -122,7 +61,24 @@
     <% end %>
   </tbody>
 </table>
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_inquiry_path,
-            :class => 'btn btn-primary' %>
+<div class ="row">
+<nav>
+  <ul class="pagination">
+    <li>
+      <a href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+</div>
