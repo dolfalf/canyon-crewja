@@ -7,8 +7,12 @@ class InquiriesController < ApplicationController
   def index
     # @inquiries = Inquiry.all
 
+    # paging
+    # @models = Model.paginate(:page => params[:page])
+    # @models = Model.paginate(:page => params[:page], :per_page => 10)
+
     @search = Inquiry.search(params[:q])
-    @inquiries = @search.result
+    @inquiries = @search.result.paginate(:page => params[:page], :per_page => 10)
 
     respond_to do |format|
       format.html # index.html.erb

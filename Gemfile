@@ -41,6 +41,8 @@ gem 'ui_datepicker-rails3'
 gem 'devise'  #ログイン機能
 gem 'rails-i18n' # この行を追加(ransackには関係ないけどdate_select用)
 gem 'ransack'   # 検索フォーム機能
+gem 'will_paginate' #paging
+gem 'will_paginate-bootstrap'   #bootstap paging
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
