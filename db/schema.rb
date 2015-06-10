@@ -22,10 +22,12 @@ ActiveRecord::Schema.define(version: 20150601144303) do
     t.string   "kanji_1"
     t.string   "kanji_2"
     t.string   "kanji_3"
+    t.datetime "regist_date"
+    t.string   "regist_user"
+    t.datetime "update_date"
+    t.string   "update_user"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.string   "regist_user"
-    t.string   "update_user"
   end
 
   create_table "bill_detail_infos", force: :cascade do |t|
@@ -45,10 +47,12 @@ ActiveRecord::Schema.define(version: 20150601144303) do
     t.date     "pay_day"
     t.integer  "display_flag"
     t.integer  "check_flag"
+    t.datetime "regist_date"
+    t.string   "regist_user"
+    t.datetime "update_date"
+    t.string   "update_user"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.string   "regist_user"
-    t.string   "update_user"
   end
 
   create_table "bill_head_infos", force: :cascade do |t|
@@ -60,25 +64,45 @@ ActiveRecord::Schema.define(version: 20150601144303) do
     t.integer  "auto_print_count"
     t.decimal  "all_amount"
     t.integer  "unpaid_flag"
+    t.datetime "regist_date"
+    t.string   "regist_user"
+    t.datetime "update_date"
+    t.string   "update_user"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.string   "regist_user"
-    t.string   "update_user"
   end
 
   create_table "branch_infos", force: :cascade do |t|
     t.string   "branch_name"
+    t.string   "branch_kana"
+    t.string   "address_zip"
     t.string   "address"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "bank_name"
+    t.string   "bank_code"
+    t.string   "account_type"
+    t.string   "account_number"
+    t.string   "account_name"
+    t.string   "account_name_kana"
+    t.string   "post_account_mark"
+    t.string   "post_account_number"
+    t.string   "post_master_number"
+    t.string   "post_master_name"
+    t.datetime "regist_date"
+    t.string   "regist_user"
+    t.datetime "update_date"
+    t.string   "update_user"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   create_table "courses", force: :cascade do |t|
     t.string   "course_name"
+    t.datetime "regist_date"
+    t.string   "regist_user"
+    t.datetime "update_date"
+    t.string   "update_user"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.string   "regist_user"
-    t.string   "update_user"
   end
 
   create_table "inquiries", force: :cascade do |t|
@@ -151,10 +175,12 @@ ActiveRecord::Schema.define(version: 20150601144303) do
     t.boolean  "inquiry_other"
     t.string   "inquiry_other_content"
     t.string   "remarks"
+    t.datetime "regist_date"
+    t.string   "regist_user"
+    t.datetime "update_date"
+    t.string   "update_user"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
-    t.string   "regist_user"
-    t.string   "update_user"
     t.integer  "branch_info_id"
   end
 
@@ -162,10 +188,12 @@ ActiveRecord::Schema.define(version: 20150601144303) do
 
   create_table "item_groups", force: :cascade do |t|
     t.string   "item_group_name"
+    t.datetime "regist_date"
+    t.string   "regist_user"
+    t.datetime "update_date"
+    t.string   "update_user"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.string   "regist_user"
-    t.string   "update_user"
   end
 
   create_table "items", force: :cascade do |t|
@@ -185,10 +213,12 @@ ActiveRecord::Schema.define(version: 20150601144303) do
     t.date     "input_date"
     t.date     "order_plan_day"
     t.date     "order_action_day"
+    t.datetime "regist_date"
+    t.string   "regist_user"
+    t.datetime "update_date"
+    t.string   "update_user"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.string   "regist_user"
-    t.string   "update_user"
   end
 
   create_table "prefectures_codes", force: :cascade do |t|
@@ -199,12 +229,12 @@ ActiveRecord::Schema.define(version: 20150601144303) do
   end
 
   create_table "question_inputs", force: :cascade do |t|
-    t.string   "branch_id"
-    t.string   "input_id"
-    t.integer  "question_group"
-    t.string   "question_number"
     t.string   "question_value"
     t.string   "question_comment"
+    t.datetime "regist_date"
+    t.string   "regist_user"
+    t.datetime "update_date"
+    t.string   "update_user"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
@@ -213,10 +243,12 @@ ActiveRecord::Schema.define(version: 20150601144303) do
     t.integer  "question_group"
     t.string   "question_value"
     t.integer  "show_flg"
+    t.datetime "regist_date"
+    t.string   "regist_user"
+    t.datetime "update_date"
+    t.string   "update_user"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.string   "regist_user"
-    t.string   "update_user"
   end
 
   create_table "student_cources", force: :cascade do |t|
@@ -227,10 +259,12 @@ ActiveRecord::Schema.define(version: 20150601144303) do
     t.integer  "timetable_week"
     t.integer  "timetabel_time"
     t.string   "class"
+    t.datetime "regist_date"
+    t.string   "regist_user"
+    t.datetime "update_date"
+    t.string   "update_user"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-    t.string   "regist_user"
-    t.string   "update_user"
   end
 
   create_table "student_courses", force: :cascade do |t|
@@ -241,11 +275,18 @@ ActiveRecord::Schema.define(version: 20150601144303) do
     t.integer  "timetable_week"
     t.integer  "timetabel_time"
     t.string   "class"
+    t.datetime "regist_date"
+    t.string   "regist_user"
+    t.datetime "update_date"
+    t.string   "update_user"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-    t.string   "regist_user"
-    t.string   "update_user"
+    t.integer  "branch_info_id"
+    t.integer  "student_info_id"
   end
+
+  add_index "student_courses", ["branch_info_id"], name: "index_student_courses_on_branch_info_id"
+  add_index "student_courses", ["student_info_id"], name: "index_student_courses_on_student_info_id"
 
   create_table "student_infos", force: :cascade do |t|
     t.string   "child_id"
@@ -263,10 +304,12 @@ ActiveRecord::Schema.define(version: 20150601144303) do
     t.string   "leave_class_base"
     t.string   "link_sibling_id"
     t.integer  "same_enter"
+    t.datetime "regist_date"
+    t.string   "regist_user"
+    t.datetime "update_date"
+    t.string   "update_user"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
-    t.string   "regist_user"
-    t.string   "update_user"
     t.integer  "branch_info_id"
     t.integer  "inquiry_id"
   end
@@ -275,22 +318,27 @@ ActiveRecord::Schema.define(version: 20150601144303) do
   add_index "student_infos", ["inquiry_id"], name: "index_student_infos_on_inquiry_id"
 
   create_table "student_logs", force: :cascade do |t|
-    t.string   "branch_id"
-    t.string   "student_id"
     t.integer  "sequence_no"
     t.datetime "log_entry_date"
     t.string   "log_entry_contents"
+    t.integer  "loggroup"
     t.string   "log_engry_person"
+    t.datetime "regist_date"
+    t.string   "regist_user"
+    t.datetime "update_date"
+    t.string   "update_user"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
 
   create_table "teachers", force: :cascade do |t|
     t.string   "teacher_name"
+    t.datetime "regist_date"
+    t.string   "regist_user"
+    t.datetime "update_date"
+    t.string   "update_user"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.string   "regist_user"
-    t.string   "update_user"
   end
 
   create_table "users", force: :cascade do |t|

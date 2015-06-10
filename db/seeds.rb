@@ -6,6 +6,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+# Dummy Data
+BranchInfo.create(branch_name: '赤羽１' , branch_kana: 'Aakabane1', address_zip: '1150003', address: '', 
+  bank_name: 'UFJ', bank_code: '001', account_type: 1, account_number: '123456', account_name: '赤羽１', account_name_kana: 'アカバネ１', 
+  post_account_mark: '1', post_account_number: '1234', post_master_number: '12345', post_master_name: '123456', 
+  regist_date: '2015-06-09',regist_user: 'test_user',update_date: '2015-06-09', update_user: 'test_user')
+
+
+# Master Data
 PrefecturesCode.create(code: '01' , name: '北海道')
 PrefecturesCode.create( code: '02' , name: '青森県')
 PrefecturesCode.create( code: '03' , name: '岩手県')
@@ -55,3 +63,4 @@ PrefecturesCode.create( code: '44' , name: '大分県')
 PrefecturesCode.create( code: '45' , name: '宮崎県')
 PrefecturesCode.create( code: '46' , name: '鹿児島県')
 PrefecturesCode.create( code: '46' , name: '沖縄県')
+

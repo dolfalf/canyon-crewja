@@ -17,9 +17,9 @@ class CreateBillDetailInfos < ActiveRecord::Migration
       t.date :pay_day
       t.integer :display_flag
       t.integer :check_flag
-      t.timestamps :regist_date
+      t.datetime :regist_date
       t.string :regist_user
-      t.timestamps :update_date
+      t.datetime :update_date
       t.string :update_user
       
       t.timestamps null: false

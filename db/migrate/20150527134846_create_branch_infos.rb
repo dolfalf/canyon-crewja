@@ -10,14 +10,14 @@ class CreateBranchInfos < ActiveRecord::Migration
       t.string :account_type
       t.string :account_number
       t.string :account_name
-      t.stroug :account_name_kana
+      t.string :account_name_kana
       t.string :post_account_mark
       t.string :post_account_number
       t.string :post_master_number
       t.string :post_master_name
-      t.timestamps :regist_date
+      t.datetime :regist_date
       t.string :regist_user
-      t.timestamps :update_date
+      t.datetime :update_date
       t.string :update_user
 
       t.timestamps null: false

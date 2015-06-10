@@ -16,9 +16,9 @@ class CreateStudentInfos < ActiveRecord::Migration
       t.string :leave_class_base
       t.string :link_sibling_id
       t.integer :same_enter # 0:有り、1:無し
-      t.timestamps :regist_date
+      t.datetime :regist_date
       t.string :regist_user
-      t.timestamps :update_date
+      t.datetime :update_date
       t.string :update_user
 
       t.timestamps null: false
