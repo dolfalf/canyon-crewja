@@ -11,9 +11,7 @@ class CreateOrderInfos < ActiveRecord::Migration
       t.date :input_date
       t.date :order_plan_day
       t.date :order_action_day
-      t.datetime :regist_date
       t.string :regist_user
-      t.datetime :update_date
       t.string :update_user
 
       t.timestamps null: false

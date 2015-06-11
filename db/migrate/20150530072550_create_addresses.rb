@@ -9,9 +9,7 @@ class CreateAddresses < ActiveRecord::Migration
       t.string :kanji_1
       t.string :kanji_2
       t.string :kanji_3
-      t.datetime :regist_date
       t.string :regist_user
-      t.datetime :update_date
       t.string :update_user
       
       t.timestamps null: false

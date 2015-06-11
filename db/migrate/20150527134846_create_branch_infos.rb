@@ -15,9 +15,7 @@ class CreateBranchInfos < ActiveRecord::Migration
       t.string :post_account_number
       t.string :post_master_number
       t.string :post_master_name
-      t.datetime :regist_date
       t.string :regist_user
-      t.datetime :update_date
       t.string :update_user
 
       t.timestamps null: false

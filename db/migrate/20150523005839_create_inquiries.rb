@@ -70,12 +70,13 @@ class CreateInquiries < ActiveRecord::Migration
       t.boolean :inquiry_other
       t.string :inquiry_other_content
       t.string :remarks
-      t.datetime :regist_date
       t.string :regist_user
-      t.datetime :update_date
       t.string :update_user
 
       t.timestamps null: false
     end
+
+    add_column :inquiries, :branch_info_id, :integer
+    add_index :inquiries, :branch_info_id
   end
 end

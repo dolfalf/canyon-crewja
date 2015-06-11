@@ -16,12 +16,16 @@ class CreateStudentInfos < ActiveRecord::Migration
       t.string :leave_class_base
       t.string :link_sibling_id
       t.integer :same_enter # 0:有り、1:無し
-      t.datetime :regist_date
       t.string :regist_user
-      t.datetime :update_date
       t.string :update_user
 
       t.timestamps null: false
     end
+
+    add_column :studentInfos, :inquiry_id, :integer
+    add_column :studentInfos, :branch_info_id, :integer
+
+    add_index :studentInfos, :inquiry_id
+    add_index :studentInfos, :branch_info_id
   end
 end

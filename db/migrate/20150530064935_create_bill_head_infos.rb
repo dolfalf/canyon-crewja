@@ -9,9 +9,7 @@ class CreateBillHeadInfos < ActiveRecord::Migration
       t.integer :auto_print_count
       t.decimal :all_amount
       t.integer :unpaid_flag
-      t.datetime :regist_date
       t.string :regist_user
-      t.datetime :update_date
       t.string :update_user
       
       t.timestamps null: false
