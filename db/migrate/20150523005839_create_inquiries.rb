@@ -73,10 +73,12 @@ class CreateInquiries < ActiveRecord::Migration
       t.string :regist_user
       t.string :update_user
 
+      # FK
+      t.integer :branch_info_id
+
       t.timestamps null: false
     end
 
-    add_column :inquiries, :branch_info_id, :integer
     add_index :inquiries, :branch_info_id
   end
 end

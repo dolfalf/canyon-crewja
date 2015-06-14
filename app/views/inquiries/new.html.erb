@@ -17,11 +17,10 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :ブレンチID %><br>
-    <% if false %>
-    <%= f.text_field :branch_info %>
-    <% end %>
+    <%= f.label :"ブレンチID" %><br />
+    <%= f.collection_select :branch_info, BranchInfo.all, :id, :branch_name, include_blank: true %>
   </div>
+
   <div class="field">
     <%= f.label :"問い合わせ日" %><br>
     <%= f.date_select :inquiry_date %>
